@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logics Games For Kids</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🎮🧠 Logics Games For Kids</h1>
+      <p>Fun Games for Little Explorers (Ages 2-3)</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat-card">
+        <span class="stat-number" id="totalGames">6</span>
+        <div class="stat-label">Fun Games</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2-3</span>
+        <div class="stat-label">Age Range</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <div class="stat-label">Kid Safe</div>
+      </div>
+    </div>
+
+    <div class="games-grid" id="gamesGrid">
+      <div class="game-card" onclick="launchGame('balloon-pop')">
+        <div class="game-thumbnail balloon-bg">
+          <div class="game-icon">🎈</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Pop the Balloons</h3>
+          <p class="game-description">Pop colorful balloons with cute animals!</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+
+      <div class="game-card" onclick="launchGame('animal-sounds')">
+        <div class="game-thumbnail animal-bg">
+          <div class="game-icon">🐶</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Listen and Pick</h3>
+          <p class="game-description">Listen Name Of Animal & Pick The Photo</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+
+      <div class="game-card" onclick="launchGame('color-match')">
+        <div class="game-thumbnail color-bg">
+          <div class="game-icon">🌈</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Color Match</h3>
+          <p class="game-description">Match colors and learn their names!</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+
+      <div class="game-card" onclick="launchGame('shape-sorter')">
+        <div class="game-thumbnail shape-bg">
+          <div class="game-icon">⭐</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Shape Sorter</h3>
+          <p class="game-description">Sort shapes into the right holes!</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+
+      <div class="game-card" onclick="launchGame('bubble-tap')">
+        <div class="game-thumbnail bubble-bg">
+          <div class="game-icon">🫧</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Bubble Tap</h3>
+          <p class="game-description">Tap floating bubbles and watch them pop!</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+
+      <div class="game-card" onclick="launchGame('fill-basket')">
+        <div class="game-thumbnail basket-bg">
+          <div class="game-icon">🧺</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Fill the Basket</h3>
+          <p class="game-description">Count and tap fruits to fill the basket!</p>
+          <button class="play-button">Play Now!</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>🌟 Safe, Fun, and Educational Games for Toddlers 🌟</p>
+    </footer>
+  </div>
+
+  <!-- Game Modal -->
+  <div id="gameModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeGame()">&times;</span>
+      <iframe id="gameFrame" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

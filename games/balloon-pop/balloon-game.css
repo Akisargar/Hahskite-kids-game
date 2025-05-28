@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3em;
+    color: #FF6B6B;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.score {
+    font-size: 2em;
+    color: #4ECDC4;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.instructions {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#gameArea {
+    position: relative;
+    height: 500px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+}
+
+.balloon {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.balloon:hover {
+    transform: scale(1.1);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.balloon-body {
+    width: 100px;
+    height: 120px;
+    border-radius: 50% / 60%;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.balloon-string {
+    width: 3px;
+    height: 60px;
+    background: #333;
+    margin: 0 auto;
+}
+
+.animal-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    user-select: none;
+}
+
+.pop-animation {
+    position: absolute;
+    font-size: 4em;
+    animation: popEffect 0.8s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes popEffect {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.celebration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6em;
+    animation: celebrate 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+@keyframes celebrate {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.restart-btn {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: inherit;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.restart-btn:hover {
+    transform: scale(1.05);
+}
+
+.sound-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #FFD93D;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+    
+    .balloon-body {
+        width: 80px;
+        height: 100px;
+    }
+    
+    .animal-face {
+        font-size: 2em;
+    }
+    
+    #gameArea {
+        height: 400px;
+    }
+}
+#gameOverScreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.game-over-box {
+    background: #ffffffee;
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    animation: popIn 0.4s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#gameOverScreen h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #FF6B6B;
+    text-shadow: 2px 2px #ffe3e3;
+}
+
+#finalScore {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}

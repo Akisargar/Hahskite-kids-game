@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Tap Game</title>
+    <link rel="stylesheet" href="bubble-tap.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+        <h1 class="title">🫧 Bubble Tap Game 🫧</h1>
+        <div class="instructions">Tap the floating bubbles to pop them!</div>
+        <div class="score">Bubbles Popped: <span id="scoreValue">0</span></div>
+        
+        <div class="game-area" id="gameArea"></div>
+        
+        <div class="feedback" id="feedback"></div>
+        
+        <button class="restart-btn" onclick="startNewGame()">🎮 More Bubbles</button>
+    </div>
+    <script type="module" src="./bubble-tap.js"></script>
+</body>
+</html>

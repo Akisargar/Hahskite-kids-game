@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop the Balloons!</title>
+    <link rel="stylesheet" href="balloon-game.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+        <h1 class="title">🎈 Pop the Balloons! 🎈</h1>
+        <div class="instructions">Tap the balloons to pop them!</div>
+        <div class="score">Score: <span id="scoreValue">0</span></div>
+        <div id="gameArea"></div>
+        <button class="restart-btn">🎮 New Game</button>
+    </div>
+    <div id="gameOverScreen">
+        <div class="game-over-box">
+            <h2>💥 Game Over! 💥</h2>
+            <p id="finalScore">Your Score: 0</p>
+            <button id="restartBtn" class="restart-btn">🔁 Restart Game</button>
+        </div>
+    </div>
+    
+    <script type="module" src="./balloon-game.js"></script>
+</body>
+</html>

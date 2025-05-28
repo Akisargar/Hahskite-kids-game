@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Sorter Game</title>
+    <link rel="stylesheet" href="shape-sorter.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+        <h1 class="title">⭐ Shape Sorter Game ⭐</h1>
+        <div class="instructions">Drag the shapes to their matching holes!</div>
+        <div class="score">Shapes Sorted: <span id="scoreValue">0</span></div>
+        
+        <div class="game-board">
+            <div class="sorter-box" id="sorterBox">
+                <div class="hole circle-hole" data-shape="circle">
+                    <div class="hole-label">Circle</div>
+                </div>
+                <div class="hole square-hole" data-shape="square">
+                    <div class="hole-label">Square</div>
+                </div>
+                <div class="hole triangle-hole" data-shape="triangle">
+                    <div class="hole-label">Triangle</div>
+                </div>
+                <div class="hole star-hole" data-shape="star">
+                    <div class="hole-label">Star</div>
+                </div>
+            </div>
+            
+            <div class="shapes-area" id="shapesArea"></div>
+        </div>
+        
+        <div class="feedback" id="feedback"></div>
+        
+        <button class="restart-btn" onclick="startNewGame()">🎮 New Shapes</button>
+    </div>
+    <script type="module" src="./shape-sorter.js"></script>
+
+</body>
+</html>

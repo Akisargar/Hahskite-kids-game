@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match Game</title>
+    <link rel="stylesheet" href="color-match.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+        <h1 class="title">🌈 Color Match Game 🌈</h1>
+        <div class="instructions">Find the <span id="targetColorName">RED</span> color!</div>
+        <div class="score">Score: <span id="scoreValue">0</span></div>
+        
+        <div class="target-section">
+            <div class="target-label">Find this color:</div>
+            <div class="target-color" id="targetColor">
+                <div class="target-emoji" id="targetEmoji">🔴</div>
+            </div>
+            <div class="target-name" id="targetName">Red</div>
+        </div>
+        
+        <div class="colors-grid" id="colorsGrid"></div>
+        
+        <div class="feedback" id="feedback"></div>
+        
+        <button class="restart-btn" onclick="startNewGame()">🎮 New Colors</button>
+    </div>
+    <script type="module" src="./color-match.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #FFF8DC 0%, #F0E68C 100%);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.8em;
+    color: #8B4513;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    animation: basketBounce 2s ease-in-out infinite;
+}
+
+@keyframes basketBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.instructions {
+    font-size: 1.4em;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.score {
+    font-size: 1.8em;
+    color: #4ECDC4;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.display-baskets {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.basket {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basket.filled .basket-fruits {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    animation: fruitWiggle 3s ease-in-out infinite;
+}
+
+@keyframes fruitWiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.basket-container {
+    font-size: 2.5em;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.question-section {
+    margin-bottom: 30px;
+}
+
+.question-text {
+    font-size: 1.6em;
+    color: #8B4513;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question-display {
+    background: white;
+    border: 4px solid #DEB887;
+    border-radius: 25px;
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: questionPulse 2s ease-in-out infinite;
+}
+
+@keyframes questionPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.question-number {
+    font-size: 4em;
+    font-weight: bold;
+    color: #FF6B6B;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.question-fruit {
+    font-size: 4em;
+    animation: fruitSpin 3s ease-in-out infinite;
+}
+
+@keyframes fruitSpin {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.fill-section {
+    margin-bottom: 30px;
+}
+
+.empty-basket {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.empty-basket .basket-fruits {
+    min-height: 40px;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 200px;
+    animation: basketFill 0.3s ease-out;
+}
+
+@keyframes basketFill {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.empty-basket .basket-container {
+    font-size: 4em;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+}
+
+.progress-counter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #8B4513;
+    background: rgba(255,255,255,0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 3px solid #DEB887;
+}
+
+.tap-section {
+    margin-bottom: 30px;
+}
+
+.fruit-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #4ECDC4;
+    background: linear-gradient(45deg, #FFE4B5, #FFEFD5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fruit-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.fruit-button:active {
+    transform: scale(1.2);
+    background: linear-gradient(45deg, #FFD700, #FFF8DC);
+}
+
+.fruit-button span {
+    font-size: 4em;
+    animation: buttonFruit 2s ease-in-out infinite;
+}
+
+@keyframes buttonFruit {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.fruit-button.tap-effect {
+    animation: tapRipple 0.4s ease-out;
+}
+
+@keyframes tapRipple {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 12px 30px rgba(78, 205, 196, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+}
+
+.tap-instruction {
+    font-size: 1.4em;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.feedback {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback.show {
+    animation: feedbackCelebrate 1s ease-out;
+}
+
+@keyframes feedbackCelebrate {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.restart-btn {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.restart-btn:hover {
+    transform: scale(1.05);
+}
+
+.sound-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #FFD93D;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.confetti {
+    position: absolute;
+    font-size: 2em;
+    animation: confettiFall 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.fruit-add-animation {
+    animation: fruitPop 0.5s ease-out;
+}
+
+@keyframes fruitPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .display-baskets {
+        gap: 10px;
+    }
+    
+    .basket-container {
+        font-size: 2em;
+    }
+    
+    .question-number, .question-fruit {
+        font-size: 3em;
+    }
+    
+    .fruit-button {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .fruit-button span {
+        font-size: 3em;
+    }
+    
+    .empty-basket .basket-container {
+        font-size: 3em;
+    }
+    
+    .progress-counter {
+        font-size: 1.5em;
+    }
+}
